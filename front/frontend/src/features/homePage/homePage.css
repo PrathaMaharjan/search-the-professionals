@@ -1,0 +1,186 @@
+h1{
+	color: pink;
+}
+#p1{
+	color: orange;
+}
+.odd{
+	color: beige;
+}
+.even{
+	color: green;
+}
+
+html, body{
+	height: 100%;
+	margin: 0;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	font-family: Arial, sans-serif;
+}
+
+section{
+/*	flex: 1; /*pushes footer down*/
+	padding-top: 80px;
+}
+
+header{
+	position: fixed; /*position is fixed */
+	top: 0;           /* Positions it at the very top */
+    left: 0;
+    width: 100%;      /* Ensures it takes up the full width */
+	background-color: black;
+	padding: 15px 20px; /* topbottom, leftright*/
+    text-align: center;
+
+}
+nav{
+
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+}
+
+nav a{
+	color: white;
+	text-decoration: none; /* underline hatcha */
+	font-weight: bold; 
+	font-size: 20px;
+	padding: 10px;
+	transition: 0.4s;
+
+}
+
+nav a:hover{
+	/*background-color:#0055aa;
+	border-radius: 5px;*/
+	color: darkgrey;       /* Change text color when hovered */
+    transition: 0.4s;
+}
+
+
+
+footer{
+	/*position: relative; 
+	bottom: 0;*/
+	margin-top: auto;
+	width: 100%;
+	background-color: black;
+	padding: 40px 0px; /* topbottom, leftright*/
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;  /* Ensures it doesn’t touch the edges */
+    margin: auto; /* Centers the content */
+}
+
+
+/*.footerinfo{
+	flex: 1;
+/*	min-width: 150px;*/
+
+ul{
+	list-style: none;
+}
+
+
+.footerinfo h2 {
+	color: white;
+	font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footerinfo ul li{
+	margin-bottom: 10px;
+}
+
+.footerinfo ul li a{
+	color: darkgrey;
+	text-decoration: none;
+	font-size: 14px;
+	transition: all 0.4s ease;
+	margin-bottom: 3px;
+}
+
+.footerinfo ul li a:hover{
+	color: white;
+	padding-left: 8px;
+	
+}
+
+/*.socials{
+	display: flex;
+	justify-content: center;
+}*/
+
+.footerinfo .socials a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color:rgba(255, 255, 255, 0.2);
+    margin-right:0 5px 5px 0; /*fix position*/
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition:0.4s;
+
+}
+
+
+/*.socials a i{
+	color: white;
+	opacity: 0.9;
+}*/
+
+.socials a:hover{
+	color: darkgrey;
+	background-color:white;
+	
+}
+.copy{
+	background-color: black;
+	padding: 20px;
+	color: darkgrey;
+	font-size: 10px;
+	text-align: center;
+}
+/*---------------this is for login--------------------------------------*/
+
+
+.section .btn{
+	margin-top: 16px;
+	display: inline-block;
+	padding: 9rem 3rem;
+	font-size:1.7rem ;
+	color: white;
+	background: black;
+	cursor: pointer;
+}
+
+.section .home{
+
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	background: url(../images/home_img.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	/* grid grid-template-columns: repeat(auto-fit, minmax(17rem,auto));
+	gap: 1.5rem ; */
+
+}
+
+.section .home-text h3{
+	font-size: 24px;
+	text-transform: uppercase ;
+}
