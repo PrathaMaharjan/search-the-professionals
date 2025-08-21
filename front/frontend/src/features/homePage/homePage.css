@@ -1,186 +1,171 @@
-h1{
-	color: pink;
-}
-#p1{
-	color: orange;
-}
-.odd{
-	color: beige;
-}
-.even{
-	color: green;
+/* Reset body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #333; /* ensure body is dark too */
+  font-family: 'Poppins', sans-serif;
 }
 
-html, body{
-	height: 100%;
-	margin: 0;
+/* Full-page wrapper */
+.homepage-wrapper {
+  min-height: 100vh;       
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #333; /* dark background */
+  color: #f5f5f5;
+  box-sizing: border-box;
 }
 
-body{
-	display: flex;
-	flex-direction: column;
-	font-family: Arial, sans-serif;
+/* Wrapper for content below navbar */
+.page-content {
+  width: 100%;      /* full width */
+  max-width: 1200px;   
+  margin: 0 auto;      
+  padding: 0 1rem;   /* optional side padding */
+  box-sizing: border-box;
+  background: transparent; /* remove any white bg */
 }
 
-section{
-/*	flex: 1; /*pushes footer down*/
-	padding-top: 80px;
+/* Hero / search section */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 }
 
-header{
-	position: fixed; /*position is fixed */
-	top: 0;           /* Positions it at the very top */
-    left: 0;
-    width: 100%;      /* Ensures it takes up the full width */
-	background-color: black;
-	padding: 15px 20px; /* topbottom, leftright*/
-    text-align: center;
-
-}
-nav{
-
-	display: flex;
-	gap: 30px;
-	justify-content: center;
+/* Full-width search box (hero style) */
+.search-box.full-width {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 4rem 2rem;
+  border-radius: 0;  
+  border: none;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-nav a{
-	color: white;
-	text-decoration: none; /* underline hatcha */
-	font-weight: bold; 
-	font-size: 20px;
-	padding: 10px;
-	transition: 0.4s;
-
+/* Hero title in deep cherry red */
+.search-title {
+  color: #6f0202;
+  font-size: 2rem; 
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
-nav a:hover{
-	/*background-color:#0055aa;
-	border-radius: 5px;*/
-	color: darkgrey;       /* Change text color when hovered */
-    transition: 0.4s;
+/* Search input */
+.search-input {
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
 }
 
-
-
-footer{
-	/*position: relative; 
-	bottom: 0;*/
-	margin-top: auto;
-	width: 100%;
-	background-color: black;
-	padding: 40px 0px; /* topbottom, leftright*/
+.search-input::placeholder {
+  color: #ccc;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 80%;  /* Ensures it doesn’t touch the edges */
-    margin: auto; /* Centers the content */
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #888;
 }
 
-
-/*.footerinfo{
-	flex: 1;
-/*	min-width: 150px;*/
-
-ul{
-	list-style: none;
+/* Search tags */
+.search-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-
-.footerinfo h2 {
-	color: white;
-	font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
+.pills {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
-.footerinfo ul li{
-	margin-bottom: 10px;
+.pills:hover {
+  background: rgba(255,255,255,0.2);
 }
 
-.footerinfo ul li a{
-	color: darkgrey;
-	text-decoration: none;
-	font-size: 14px;
-	transition: all 0.4s ease;
-	margin-bottom: 3px;
+.pills.selected {
+  background: #666;
+  color: #fff;
+  font-weight: 600;
 }
 
-.footerinfo ul li a:hover{
-	color: white;
-	padding-left: 8px;
-	
+/* Results cards */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
 }
 
-/*.socials{
-	display: flex;
-	justify-content: center;
-}*/
-
-.footerinfo .socials a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color:rgba(255, 255, 255, 0.2);
-    margin-right:0 5px 5px 0; /*fix position*/
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition:0.4s;
-
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/*.socials a i{
-	color: white;
-	opacity: 0.9;
-}*/
-
-.socials a:hover{
-	color: darkgrey;
-	background-color:white;
-	
-}
-.copy{
-	background-color: black;
-	padding: 20px;
-	color: darkgrey;
-	font-size: 10px;
-	text-align: center;
-}
-/*---------------this is for login--------------------------------------*/
-
-
-.section .btn{
-	margin-top: 16px;
-	display: inline-block;
-	padding: 9rem 3rem;
-	font-size:1.7rem ;
-	color: white;
-	background: black;
-	cursor: pointer;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.section .home{
-
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	background: url(../images/home_img.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	display: grid;
-	/* grid grid-template-columns: repeat(auto-fit, minmax(17rem,auto));
-	gap: 1.5rem ; */
-
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.3rem;
 }
 
-.section .home-text h3{
-	font-size: 24px;
-	text-transform: uppercase ;
+.card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0.2rem 0;
+}
+
+/* "No users found" below search box */
+.no-users {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .search-title {
+    font-size: 1.7rem;
+  }
+
+  .no-users {
+    font-size: 1.2rem;
+  }
 }

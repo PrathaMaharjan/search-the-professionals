@@ -12,35 +12,30 @@ export default function Login() {
     username: "",
     password: "",
   });
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (loading) {
-      return;
-    }
-    console.log(formData);
+    if (loading) return;
+
     setLoading(true);
     loginApi(formData)
       .then((res: AxiosResponse) => {
-        console.log(res);
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("currentUser", JSON.stringify(res.data.userData));
+        localStorage.setItem("currentUser", JSON.stringify(res.data.user));
         navigate("/home");
       })
       .catch((error: AxiosError) => {
-        console.log(error);
         alert(error.response?.data);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   };
+
   return (
     <div className="login-wrapper">
       <form className="login-form" onSubmit={handleSubmit} action="">
@@ -54,7 +49,6 @@ export default function Login() {
           type="text"
         />
         <label>Password</label>
-
         <input
           name="password"
           placeholder="Password"
@@ -63,6 +57,12 @@ export default function Login() {
           type="text"
         />
         <button type="submit">Login</button>
+
+        {/* Sign up link */}
+        <p className="signup-link">
+          Don't have an account?{" "}
+          <span onClick={() => navigate("/register")}>Sign up</span>
+        </p>
       </form>
     </div>
   );

@@ -1,8 +1,11 @@
 
 //Initialization
+import dotenv from "dotenv";
+dotenv.config();
 import app from './app.js';
 import mongoose from 'mongoose';
 
+import './config/cloudinary.config.js';
 const port = 3000;
 
 //Routes

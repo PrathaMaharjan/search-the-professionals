@@ -1,4 +1,3 @@
-
 .login-wrapper {
   display: flex;
   justify-content: center;
@@ -8,19 +7,19 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-form h1{
+.login-form h1 {
   display: flex;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
-
 
 .login-form {
   background-color: #ffffff;
-  padding: 1.5rem 2rem; /* Smaller box */
-  border-radius: 1.5rem; /* More rounded */
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 320px; /* Smaller width */
+  max-width: 320px;
   display: flex;
   flex-direction: column;
 }
@@ -43,7 +42,6 @@
   outline: none;
 }
 
-
 .login-form button {
   padding: 0.75rem;
   background-color: black;
@@ -58,4 +56,22 @@
 
 .login-form button:hover {
   background-color: #333333;
+}
+
+/* Sign up link */
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.signup-link span {
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-link span:hover {
+  text-decoration: underline;
 }
